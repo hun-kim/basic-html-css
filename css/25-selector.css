@@ -5,10 +5,15 @@
   color: inherit;
 }
 
+/* 가상 요소 선택자 */
+::selection {
+  background: #373e6a;
+  color: pink;
+}
+
 /* 태그 선택자 */
 body {
   font-family: "SUIT";
-  margin: 0;
   font-weight: 300;
   background-color: black;
   color: white;
@@ -30,4 +35,33 @@ ul.menu {
 
 #demo {
   border: red 5px solid;
+}
+
+/* 속성 선택자 */
+.menu a[href$=".html"] {
+  background-color: blue;
+}
+
+/* 선택자 목록 */
+.fancy,
+.menu {
+  font-size: 24px;
+}
+
+/* 가상 요소 선택자 */
+.align::before {
+  content: "이전 요소";
+}
+
+.align::after {
+  content: "다음 요소";
+}
+
+/* 가상 클래스 */
+.menu li:nth-child(-n + 2) {
+  color: yellow;
+}
+
+.menu a:hover {
+  border: 5px solid yellow;
 }
